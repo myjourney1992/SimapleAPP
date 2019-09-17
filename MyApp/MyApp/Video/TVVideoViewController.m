@@ -44,6 +44,7 @@
         [((ZLLVideoCoverView *)cell) layoutWithVideoCoverurl:@"videoCover" videoUrl:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
     }
     cell.backgroundColor = [UIColor redColor];
+    [cell layoutIfNeeded];
     return cell;
 }
 

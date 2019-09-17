@@ -14,6 +14,7 @@
 @property(nonatomic, strong) AVPlayer *avPlayer;
 @property(nonatomic, strong) AVPlayerLayer *avPlayerLayer;
 
+@property(nonatomic, strong) MyLinearLayout *rootLayout;
 @property(nonatomic, strong) UIImageView *coverView;
 @property(nonatomic, strong) UIImageView *playView;
 @property(nonatomic, strong) NSString *videoUrl;
@@ -33,26 +34,26 @@
 
 - (void)setupUI {
     
-//    MyRelativeLayout *rootLayout = [[MyRelativeLayout alloc] init];
-//    rootLayout.myMargin = 0;
-//    [self addSubview:rootLayout];
+    self.rootLayout = [[MyLinearLayout alloc] init];
+    self.rootLayout.myMargin = 0;
+    [self.contentView addSubview:self.rootLayout];
     
-    self.coverView = [[UIImageView alloc] initWithFrame:self.bounds];
+    self.coverView = [[UIImageView alloc] init];
     self.coverView.backgroundColor = [UIColor yellowColor];
-//    self.coverView.myMargin = 0;
-    [self addSubview:self.coverView];
+    self.coverView.myMargin = 0;
+    [self.rootLayout addSubview:self.coverView];
     
-    self.playView = [[UIImageView alloc] initWithFrame:CGRectMake((self.coverView.frame.size.width - 50) /2, (self.coverView.frame.size.height - 50)/2, 50, 50)];
-    self.playView.image = [UIImage imageNamed:@"videoPlay"];
-    self.playView.backgroundColor = [UIColor redColor];
+//    self.playView = [[UIImageView alloc] init];
+//    self.playView.image = [UIImage imageNamed:@"videoPlay"];
+//    self.playView.backgroundColor = [UIColor redColor];
 //    self.playView.myCenterX = 0;
 //    self.playView.myCenterY = 0;
 //    self.playView.mySize = CGSizeMake(50, 50);
 //    self.playView.userInteractionEnabled = YES;
-    [self.coverView addSubview:self.playView];
+//    [self.coverView addSubview:self.playView];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [self addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+//    [self.coverView addGestureRecognizer:tap];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePalyEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     
