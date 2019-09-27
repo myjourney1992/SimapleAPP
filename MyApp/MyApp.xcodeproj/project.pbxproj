@@ -19,8 +19,8 @@
 		E99802442289665600E1AB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99802432289665600E1AB6D /* Assets.xcassets */; };
 		E99802472289665600E1AB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99802452289665600E1AB6D /* LaunchScreen.storyboard */; };
 		E998024A2289665600E1AB6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99802492289665600E1AB6D /* main.m */; };
+		E9B34F14233DB89200A77BA3 /* ZLLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B34F13233DB89200A77BA3 /* ZLLMineViewController.m */; };
 		E9B3DF78229CD578007F8E0E /* ZLLDaleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B3DF77229CD578007F8E0E /* ZLLDaleteCellView.m */; };
-		E9D55B51230F926700262497 /* ZLLSingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D55B50230F926700262497 /* ZLLSingleLinkedList.m */; };
 		FEFED61B6D539A4DE694B7D8 /* libPods-MyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EEB0301AF7D9FCEBB420F4 /* libPods-MyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -52,10 +52,10 @@
 		E99802462289665600E1AB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E99802482289665600E1AB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99802492289665600E1AB6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9B34F12233DB89200A77BA3 /* ZLLMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLMineViewController.h; sourceTree = "<group>"; };
+		E9B34F13233DB89200A77BA3 /* ZLLMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLMineViewController.m; sourceTree = "<group>"; };
 		E9B3DF76229CD578007F8E0E /* ZLLDaleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLDaleteCellView.h; sourceTree = "<group>"; };
 		E9B3DF77229CD578007F8E0E /* ZLLDaleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLDaleteCellView.m; sourceTree = "<group>"; };
-		E9D55B4F230F926700262497 /* ZLLSingleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLSingleLinkedList.h; sourceTree = "<group>"; };
-		E9D55B50230F926700262497 /* ZLLSingleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLSingleLinkedList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,39 +107,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E92C147D22C5ED390022B47D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E93F486C2295366300C08B59 /* NormalTableViewCell.h */,
-				E93F486D2295366300C08B59 /* NormalTableViewCell.m */,
-				E9B3DF76229CD578007F8E0E /* ZLLDaleteCellView.h */,
-				E9B3DF77229CD578007F8E0E /* ZLLDaleteCellView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E97A322922A139A60062FA98 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E998023D2289665500E1AB6D /* ZLLNewsViewController.h */,
-				E998023E2289665500E1AB6D /* ZLLNewsViewController.m */,
-				E93F48692294092D00C08B59 /* RecommendViewController.h */,
-				E93F486A2294092D00C08B59 /* RecommendViewController.m */,
-				E93F486F229BC74100C08B59 /* ZLLDetailViewController.h */,
-				E93F4870229BC74100C08B59 /* ZLLDetailViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E97A322D22A13EBC0062FA98 /* NetWork */ = {
-			isa = PBXGroup;
-			children = (
-				E97A322A22A13EB30062FA98 /* ZLLListLoader.h */,
-				E97A322B22A13EB30062FA98 /* ZLLListLoader.m */,
-			);
-			path = NetWork;
-			sourceTree = "<group>";
-		};
 		E998022E2289665500E1AB6D = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +129,11 @@
 		E99802392289665500E1AB6D /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E9B34F0F233DB7A800A77BA3 /* Base */,
+				E9B34F10233DB87600A77BA3 /* My */,
+				E9B34F0C233DB6F500A77BA3 /* Recommend */,
+				E9B34F0B233DB6E100A77BA3 /* News */,
 				E914DB9123210C0C008AECB8 /* Video */,
-				E9D55B4E230F922300262497 /* LinkedListed */,
-				E97A322D22A13EBC0062FA98 /* NetWork */,
-				E92C147922C22F9C0022B47D /* Model */,
-				E92C147D22C5ED390022B47D /* View */,
-				E97A322922A139A60062FA98 /* Controllers */,
 				E998023A2289665500E1AB6D /* AppDelegate.h */,
 				E998023B2289665500E1AB6D /* AppDelegate.m */,
 				E99802432289665600E1AB6D /* Assets.xcassets */,
@@ -178,13 +144,63 @@
 			path = MyApp;
 			sourceTree = "<group>";
 		};
-		E9D55B4E230F922300262497 /* LinkedListed */ = {
+		E9B34F0B233DB6E100A77BA3 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				E9D55B4F230F926700262497 /* ZLLSingleLinkedList.h */,
-				E9D55B50230F926700262497 /* ZLLSingleLinkedList.m */,
+				E92C147922C22F9C0022B47D /* Model */,
+				E9B34F0E233DB76000A77BA3 /* View */,
+				E9B34F0D233DB74F00A77BA3 /* Controller */,
 			);
-			path = LinkedListed;
+			path = News;
+			sourceTree = "<group>";
+		};
+		E9B34F0C233DB6F500A77BA3 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				E93F48692294092D00C08B59 /* RecommendViewController.h */,
+				E93F486A2294092D00C08B59 /* RecommendViewController.m */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		E9B34F0D233DB74F00A77BA3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E998023D2289665500E1AB6D /* ZLLNewsViewController.h */,
+				E998023E2289665500E1AB6D /* ZLLNewsViewController.m */,
+				E93F486F229BC74100C08B59 /* ZLLDetailViewController.h */,
+				E93F4870229BC74100C08B59 /* ZLLDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E9B34F0E233DB76000A77BA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E93F486C2295366300C08B59 /* NormalTableViewCell.h */,
+				E93F486D2295366300C08B59 /* NormalTableViewCell.m */,
+				E9B3DF76229CD578007F8E0E /* ZLLDaleteCellView.h */,
+				E9B3DF77229CD578007F8E0E /* ZLLDaleteCellView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9B34F0F233DB7A800A77BA3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E97A322A22A13EB30062FA98 /* ZLLListLoader.h */,
+				E97A322B22A13EB30062FA98 /* ZLLListLoader.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E9B34F10233DB87600A77BA3 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				E9B34F12233DB89200A77BA3 /* ZLLMineViewController.h */,
+				E9B34F13233DB89200A77BA3 /* ZLLMineViewController.m */,
+			);
+			path = My;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B34F14233DB89200A77BA3 /* ZLLMineViewController.m in Sources */,
 				E97A322C22A13EB30062FA98 /* ZLLListLoader.m in Sources */,
 				E914DB9423210CAF008AECB8 /* ZLLVideoCoverView.m in Sources */,
 				E998023F2289665500E1AB6D /* ZLLNewsViewController.m in Sources */,
@@ -339,7 +356,6 @@
 				E998024A2289665600E1AB6D /* main.m in Sources */,
 				E9268A5D229296C6002AEB81 /* TVVideoViewController.m in Sources */,
 				E93F486E2295366300C08B59 /* NormalTableViewCell.m in Sources */,
-				E9D55B51230F926700262497 /* ZLLSingleLinkedList.m in Sources */,
 				E998023C2289665500E1AB6D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

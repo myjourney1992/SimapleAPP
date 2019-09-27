@@ -18,4 +18,6 @@
 #import <ReactiveCocoa.h>
 #import <UIImageView+WebCache.h>
 #import <MyLayout.h>
+#import <ASIHTTPRequest.h>
+#import <ASINetworkQueue.h>
 #endif /* PrefixHeader_pch */

@@ -10,6 +10,7 @@
 #import "ZLLNewsViewController.h"
 #import "TVVideoViewController.h"
 #import "RecommendViewController.h"
+#import "ZLLMineViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -40,8 +41,8 @@
     recommendVC.tabBarItem.image = [UIImage imageNamed:@"推荐"];
     recommendVC.tabBarItem.selectedImage = [UIImage imageNamed:@"推荐选择"];
 
-    UIViewController *mineVC = [[UIViewController alloc] init];
-    mineVC.view.backgroundColor = [UIColor greenColor];
+    ZLLMineViewController *mineVC = [[ZLLMineViewController alloc] init];
+    mineVC.view.backgroundColor = [UIColor whiteColor];
     mineVC.tabBarItem.title = @"我的";
     mineVC.tabBarItem.image = [UIImage imageNamed:@"我的"];
     mineVC.tabBarItem.selectedImage = [UIImage imageNamed:@"我的选择"];

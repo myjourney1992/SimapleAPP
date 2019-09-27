@@ -14,9 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
   - lottie-ios (2.5.2)
   - MyLayout (1.8.0)
   - NMCLiveStreaming (3.1.2)
+  - Reachability (3.2)
   - ReactiveCocoa (2.5.2):
     - ReactiveCocoa/UI (= 2.5.2)
   - ReactiveCocoa/Core (2.5.2):
@@ -30,6 +44,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - ASIHTTPRequest
   - lottie-ios
   - MyLayout
   - NMCLiveStreaming
@@ -39,9 +54,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - ASIHTTPRequest
     - lottie-ios
     - MyLayout
     - NMCLiveStreaming
+    - Reachability
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -56,12 +73,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   MyLayout: eb96a486df5c34d126ef016c6390eb377ad064bb
   NMCLiveStreaming: 616a02cb642be80fc89122f7c82b9c7c7fb4f745
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 976da4fea546a45c4836488dffed2ad225458a16
+PODFILE CHECKSUM: ba7106c9d8e96ff497f474be5d7cab96874c6bea
 
 COCOAPODS: 1.5.3
