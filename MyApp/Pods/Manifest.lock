@@ -28,6 +28,7 @@ PODS:
   - ASIHTTPRequest/S3 (1.8.2):
     - ASIHTTPRequest/Core
   - lottie-ios (2.5.2)
+  - Masonry (1.1.0)
   - MyLayout (1.8.0)
   - NMCLiveStreaming (3.1.2)
   - Reachability (3.2)
@@ -41,25 +42,30 @@ PODS:
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
+  - UIColor-Utilities (1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
   - ASIHTTPRequest
   - lottie-ios
+  - Masonry (~> 1.1.0)
   - MyLayout
   - NMCLiveStreaming
   - ReactiveCocoa (from `https://github.com/zhao0/ReactiveCocoa.git`, tag `2.5.2`)
   - SDWebImage
+  - UIColor-Utilities (= 1.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - ASIHTTPRequest
     - lottie-ios
+    - Masonry
     - MyLayout
     - NMCLiveStreaming
     - Reachability
     - SDWebImage
+    - UIColor-Utilities
 
 EXTERNAL SOURCES:
   ReactiveCocoa:
@@ -75,12 +81,14 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MyLayout: eb96a486df5c34d126ef016c6390eb377ad064bb
   NMCLiveStreaming: 616a02cb642be80fc89122f7c82b9c7c7fb4f745
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  UIColor-Utilities: 6746a54dcdb3bc012dd7aeaeea5588ae2100beb2
 
-PODFILE CHECKSUM: ba7106c9d8e96ff497f474be5d7cab96874c6bea
+PODFILE CHECKSUM: 3b063022f36a4c8a85b135c6379e84a467a83181
 
 COCOAPODS: 1.5.3

@@ -10,6 +10,10 @@
 		E914DB9423210CAF008AECB8 /* ZLLVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E914DB9323210CAF008AECB8 /* ZLLVideoCoverView.m */; };
 		E9268A5D229296C6002AEB81 /* TVVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9268A5C229296C6002AEB81 /* TVVideoViewController.m */; };
 		E92C147C22C2300F0022B47D /* ZLLListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E92C147B22C2300F0022B47D /* ZLLListItem.m */; };
+		E939FB0623A2417700F455BE /* SimpleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E939FB0023A2417600F455BE /* SimpleAlertView.m */; };
+		E939FB0723A2417700F455BE /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E939FB0123A2417600F455BE /* AlertView.m */; };
+		E939FB0823A2417700F455BE /* SimpleAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E939FB0423A2417600F455BE /* SimpleAlertButton.m */; };
+		E939FB0D23A245FA00F455BE /* UIImage+YXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E939FB0C23A245FA00F455BE /* UIImage+YXImage.m */; };
 		E93F486B2294092D00C08B59 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F486A2294092D00C08B59 /* RecommendViewController.m */; };
 		E93F486E2295366300C08B59 /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F486D2295366300C08B59 /* NormalTableViewCell.m */; };
 		E93F4871229BC74100C08B59 /* ZLLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F4870229BC74100C08B59 /* ZLLDetailViewController.m */; };
@@ -34,6 +38,14 @@
 		E9268A5C229296C6002AEB81 /* TVVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVVideoViewController.m; sourceTree = "<group>"; };
 		E92C147A22C2300F0022B47D /* ZLLListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLListItem.h; sourceTree = "<group>"; };
 		E92C147B22C2300F0022B47D /* ZLLListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLListItem.m; sourceTree = "<group>"; };
+		E939FB0023A2417600F455BE /* SimpleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAlertView.m; sourceTree = "<group>"; };
+		E939FB0123A2417600F455BE /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		E939FB0223A2417600F455BE /* SimpleAlertButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAlertButton.h; sourceTree = "<group>"; };
+		E939FB0323A2417600F455BE /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		E939FB0423A2417600F455BE /* SimpleAlertButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAlertButton.m; sourceTree = "<group>"; };
+		E939FB0523A2417700F455BE /* SimpleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAlertView.h; sourceTree = "<group>"; };
+		E939FB0B23A245FA00F455BE /* UIImage+YXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YXImage.h"; sourceTree = "<group>"; };
+		E939FB0C23A245FA00F455BE /* UIImage+YXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YXImage.m"; sourceTree = "<group>"; };
 		E93F48692294092D00C08B59 /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		E93F486A2294092D00C08B59 /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		E93F486C2295366300C08B59 /* NormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
@@ -107,9 +119,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E939FAFF23A2415C00F455BE /* 提示框 */ = {
+			isa = PBXGroup;
+			children = (
+				E939FB0323A2417600F455BE /* AlertView.h */,
+				E939FB0123A2417600F455BE /* AlertView.m */,
+				E939FB0223A2417600F455BE /* SimpleAlertButton.h */,
+				E939FB0423A2417600F455BE /* SimpleAlertButton.m */,
+				E939FB0523A2417700F455BE /* SimpleAlertView.h */,
+				E939FB0023A2417600F455BE /* SimpleAlertView.m */,
+			);
+			path = "提示框";
+			sourceTree = "<group>";
+		};
+		E939FB0A23A245E400F455BE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E939FB0B23A245FA00F455BE /* UIImage+YXImage.h */,
+				E939FB0C23A245FA00F455BE /* UIImage+YXImage.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		E998022E2289665500E1AB6D = {
 			isa = PBXGroup;
 			children = (
+				E939FB0A23A245E400F455BE /* Category */,
+				E939FAFF23A2415C00F455BE /* 提示框 */,
 				E97DD3982316730200F171FE /* PrefixHeader.pch */,
 				E99802392289665500E1AB6D /* MyApp */,
 				E99802382289665500E1AB6D /* Products */,
@@ -346,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9B34F14233DB89200A77BA3 /* ZLLMineViewController.m in Sources */,
+				E939FB0723A2417700F455BE /* AlertView.m in Sources */,
 				E97A322C22A13EB30062FA98 /* ZLLListLoader.m in Sources */,
 				E914DB9423210CAF008AECB8 /* ZLLVideoCoverView.m in Sources */,
+				E939FB0823A2417700F455BE /* SimpleAlertButton.m in Sources */,
 				E998023F2289665500E1AB6D /* ZLLNewsViewController.m in Sources */,
 				E93F4871229BC74100C08B59 /* ZLLDetailViewController.m in Sources */,
 				E9B3DF78229CD578007F8E0E /* ZLLDaleteCellView.m in Sources */,
@@ -355,8 +393,10 @@
 				E92C147C22C2300F0022B47D /* ZLLListItem.m in Sources */,
 				E998024A2289665600E1AB6D /* main.m in Sources */,
 				E9268A5D229296C6002AEB81 /* TVVideoViewController.m in Sources */,
+				E939FB0D23A245FA00F455BE /* UIImage+YXImage.m in Sources */,
 				E93F486E2295366300C08B59 /* NormalTableViewCell.m in Sources */,
 				E998023C2289665500E1AB6D /* AppDelegate.m in Sources */,
+				E939FB0623A2417700F455BE /* SimpleAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

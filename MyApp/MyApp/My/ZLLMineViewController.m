@@ -7,11 +7,15 @@
 //
 
 #import "ZLLMineViewController.h"
+#import "SimpleAlertView.h"
 
 @interface ZLLMineViewController ()
 @property(nonatomic, strong) UIActivityIndicatorView *indicatorView;
+@property(nonatomic, strong) ASIHTTPRequest *signInRequest;
+@property(nonatomic, strong) ASIHTTPRequest *signOutRequest;
 @property(nonatomic, strong) UIButton *signinBtn;
 @property(nonatomic, strong) UIButton *signoutBtn;
+@property(nonatomic, strong) SimpleAlertView *alertView;
 @end
 
 @implementation ZLLMineViewController
@@ -60,28 +64,30 @@
     self.indicatorView.hidden = NO;
     [self.indicatorView startAnimating];
     NSURL *url = [NSURL URLWithString:@"http://123.59.168.93:89/client.do?method=checkin&type=checkin&latlng=39.9635888671875,116.3849544270833&addr=%E5%8C%97%E4%BA%AC%E5%B8%82%E8%A5%BF%E5%9F%8E%E5%8C%BA%E5%BE%B7%E8%83%9C%E8%A1%97%E9%81%93%E8%9C%80%E5%9B%BD%E6%BC%94%E4%B9%89%E9%85%92%E6%A5%BC(%E9%BB%84%E5%AF%BA%E6%97%97%E8%88%B0%E5%BA%97)%E5%8C%97%E5%B9%BF%E5%A4%A7%E5%8E%A6&sessionkey=abcAfDj985somhmhtesZw&wifiMac="];
-    __block ASIHTTPRequest *request = [[ASIHTTPRequest alloc]initWithURL:url];
-    request.useCookiePersistence = YES;
+    self.signInRequest = [[ASIHTTPRequest alloc]initWithURL:url];
+    self.signInRequest.useCookiePersistence = YES;
     NSDictionary *properties = [[NSMutableDictionary alloc]init];
     [properties setValue:@"" forKey:NSHTTPCookieValue];
-    [properties setValue:@"ClientCountry=CN; ClientLanguage=zh-Hans; ClientMobile=; ClientToken=; ClientType=iPhone; ClientUDID=A62D1611-F0D1-4470-8B20-5A4D387ABB34; ClientVer=6.5.76; JSESSIONID=abcAfDj985somhmhtesZw; Pad=false; setClientOS=iOS; setClientOSVer=12.4.1; userKey=62cd517c-d46a-4df4-85ca-0c4df2003855; userid=63" forKey:NSHTTPCookieName];
+    [properties setValue:@"ClientCountry=CN; ClientLanguage=zh-Hans; ClientMobile=; ClientToken=; ClientType=iPhone; ClientUDID=A62D1611-F0D1-4470-8B20-5A4D387ABB34; ClientVer=6.6.1; JSESSIONID=abcl06mcB8bosdP060O2w; Pad=false; setClientOS=iOS; setClientOSVer=12.4.1; userKey=5d07a5c5-d6e9-47e6-a98e-789f83e963e9; userid=63" forKey:NSHTTPCookieName];
     [properties setValue:@"123.59.168.93:89" forKey:NSHTTPCookieDomain];
     [properties setValue:@"/cookies" forKey:NSHTTPCookiePath];
     NSHTTPCookie *cookie = [[NSHTTPCookie alloc]initWithProperties:properties];
-    [request setRequestCookies:[NSMutableArray arrayWithObject:cookie]];
-    [request setUserAgentString:@"E-MobileE-Mobile 6.5.76 rv:6.5.76.1 (iPhone; iOS 12.4.1; zh_CN)"];
-    [request setCompletionBlock:^{
+    [self.signInRequest setRequestCookies:[NSMutableArray arrayWithObject:cookie]];
+    [self.signInRequest setUserAgentString:@"E-MobileE-Mobile 6.5.76 rv:6.5.76.1 (iPhone; iOS 12.4.1; zh_CN)"];
+    [self.signInRequest setCompletionBlock:^{
         STRONG_SELF
         self.indicatorView.hidden = YES;
          [self.indicatorView stopAnimating];
     }];
-    [request setFailedBlock:^{
+    [self.signInRequest setFailedBlock:^{
         STRONG_SELF
         self.indicatorView.hidden = YES;
-         [self.indicatorView stopAnimating];
+        [self.indicatorView stopAnimating];
+        NSError *error = self.signInRequest.error;
+        [self showAlertViewWithTitle:error.localizedDescription];
     }];
-    [request setRequestMethod:@"GET"];
-    [request startAsynchronous];
+    [self.signInRequest setRequestMethod:@"GET"];
+    [self.signInRequest startAsynchronous];
 }
 
 - (void)signOut {
@@ -89,27 +95,37 @@
     self.indicatorView.hidden = NO;
     [self.indicatorView startAnimating];
     NSURL *url = [NSURL URLWithString:@"http://123.59.168.93:89/client.do?method=checkin&type=checkout&latlng=39.9635888671875,116.3849544270833&addr=%E5%8C%97%E4%BA%AC%E5%B8%82%E8%A5%BF%E5%9F%8E%E5%8C%BA%E5%BE%B7%E8%83%9C%E8%A1%97%E9%81%93%E8%9C%80%E5%9B%BD%E6%BC%94%E4%B9%89%E9%85%92%E6%A5%BC(%E9%BB%84%E5%AF%BA%E6%97%97%E8%88%B0%E5%BA%97)%E5%8C%97%E5%B9%BF%E5%A4%A7%E5%8E%A6&sessionkey=abcAfDj985somhmhtesZw&wifiMac="];
-    __block ASIHTTPRequest *request = [[ASIHTTPRequest alloc]initWithURL:url];
-    request.useCookiePersistence = YES;
+    self.signOutRequest = [[ASIHTTPRequest alloc]initWithURL:url];
+    self.signOutRequest.useCookiePersistence = YES;
     NSDictionary *properties = [[NSMutableDictionary alloc]init];
     [properties setValue:@"" forKey:NSHTTPCookieValue];
-    [properties setValue:@"ClientCountry=CN; ClientLanguage=zh-Hans; ClientMobile=; ClientToken=; ClientType=iPhone; ClientUDID=A62D1611-F0D1-4470-8B20-5A4D387ABB34; ClientVer=6.5.76; JSESSIONID=abcAfDj985somhmhtesZw; Pad=false; setClientOS=iOS; setClientOSVer=12.4.1; userKey=62cd517c-d46a-4df4-85ca-0c4df2003855; userid=63" forKey:NSHTTPCookieName];
+    [properties setValue:@"ClientCountry=CN; ClientLanguage=zh-Hans; ClientMobile=; ClientToken=; ClientType=iPhone; ClientUDID=A62D1611-F0D1-4470-8B20-5A4D387ABB34; ClientVer=6.6.1; JSESSIONID=abcl06mcB8bosdP060O2w; Pad=false; setClientOS=iOS; setClientOSVer=12.4.1; userKey=5d07a5c5-d6e9-47e6-a98e-789f83e963e9; userid=63" forKey:NSHTTPCookieName];
     [properties setValue:@"123.59.168.93:89" forKey:NSHTTPCookieDomain];
     [properties setValue:@"/cookies" forKey:NSHTTPCookiePath];
     NSHTTPCookie *cookie = [[NSHTTPCookie alloc]initWithProperties:properties];
-    [request setRequestCookies:[NSMutableArray arrayWithObject:cookie]];
-    [request setUserAgentString:@"E-MobileE-Mobile 6.5.76 rv:6.5.76.1 (iPhone; iOS 12.4.1; zh_CN)"];
-    [request setCompletionBlock:^{
+    [self.signOutRequest setRequestCookies:[NSMutableArray arrayWithObject:cookie]];
+    [self.signOutRequest setUserAgentString:@"E-MobileE-Mobile 6.5.76 rv:6.5.76.1 (iPhone; iOS 12.4.1; zh_CN)"];
+    [self.signOutRequest setCompletionBlock:^{
       STRONG_SELF
         self.indicatorView.hidden = YES;
         [self.indicatorView stopAnimating];
     }];
-    [request setFailedBlock:^{
+    [self.signOutRequest setFailedBlock:^{
         STRONG_SELF
         self.indicatorView.hidden = YES;
         [self.indicatorView stopAnimating];
+        NSError *error = self.signOutRequest.error;
+        [self showAlertViewWithTitle:error.localizedDescription];
     }];
-    [request setRequestMethod:@"GET"];
-    [request startAsynchronous];
+    [self.signOutRequest setRequestMethod:@"GET"];
+    [self.signOutRequest startAsynchronous];
+}
+
+#pragma mark - alert
+- (void)showAlertViewWithTitle:(NSString *)title {
+    self.alertView = [[SimpleAlertView alloc] init];
+    self.alertView.hideWhenMaskClicked = YES;
+    self.alertView.title = title;
+    [self.alertView show];
 }
 @end

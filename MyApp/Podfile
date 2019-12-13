@@ -13,6 +13,7 @@ target 'MyApp' do
   pod 'SDWebImage'
   pod 'MyLayout'
   pod 'ASIHTTPRequest'
-  
+  pod 'UIColor-Utilities', '1.0.1'
+  pod 'Masonry', '~> 1.1.0'
   inhibit_all_warnings!
 end

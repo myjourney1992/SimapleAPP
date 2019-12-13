@@ -14,10 +14,24 @@
 
 #define WEAK_SELF @weakify(self);
 #define STRONG_SELF @strongify(self); if(!self) {return;};
+//屏幕宽高
+#define SCREEN_WIDTH          ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT         ([UIScreen mainScreen].bounds.size.height)
+
+//屏幕宽高相对于iPhone6的比例
+#define kPhoneWidthRatio SCREEN_WIDTH/375
+#define kPhoneHeightRatio SCREEN_HEIGHT/667
+
+//block安全调用
+#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
 
 #import <ReactiveCocoa.h>
 #import <UIImageView+WebCache.h>
 #import <MyLayout.h>
 #import <ASIHTTPRequest.h>
 #import <ASINetworkQueue.h>
+#import <UIColor+Expanded.h>
+#import <Masonry.h>
 #endif /* PrefixHeader_pch */
+
+#import "UIImage+YXImage.h"
